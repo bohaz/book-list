@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Book = ({ title, author, onDelete }) => (
-  <div className="book">
-    <h3>{title}</h3>
+  <div>
+    <h2>{title}</h2>
     <p>
       Author:
       {author}
     </p>
-    <button type="button" onClick={onDelete}>Delete</button>
+    <button type="button" onClick={onDelete}>Remove</button>
   </div>
 );
 

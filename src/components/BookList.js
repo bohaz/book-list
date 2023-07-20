@@ -14,7 +14,6 @@ const BookList = ({ books, onDelete }) => (
     ))}
   </div>
 );
-
 BookList.propTypes = {
   books: PropTypes.arrayOf(
     PropTypes.shape({

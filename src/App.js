@@ -20,8 +20,8 @@ function App() {
       </nav>
 
       <Routes>
-        <Route exact path="/" component={HomePage} />
-        <Route path="/categories" component={CategoriesPage} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/categories" element={<CategoriesPage />} />
       </Routes>
     </BrowserRouter>
   );
