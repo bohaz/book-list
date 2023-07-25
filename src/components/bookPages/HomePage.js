@@ -1,23 +1,47 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import BookList from '../BookList';
-import BookForm from '../BookForm';
+import { addBook } from '../../redux/books/booksSlice';
 
 const HomePage = () => {
-  const [books, setBooks] = useState([]);
+  const [title, setTitle] = useState('');
+  const [author, setAuthor] = useState('');
+  const dispatch = useDispatch();
 
-  const handleAddBook = (newBook) => {
-    setBooks([...books, { ...newBook, id: Date.now() }]);
-  };
-
-  const handleDeleteBook = (id) => {
-    setBooks(books.filter((book) => book.id !== id));
+  const handleAddBook = () => {
+    if (title.trim() && author.trim()) {
+      dispatch(
+        addBook({
+          item_id: `item${Date.now()}`,
+          title,
+          author,
+          category: 'Uncategorized',
+        }),
+      );
+      setTitle('');
+      setAuthor('');
+    }
   };
 
   return (
     <div>
-      <h1>Book List</h1>
-      <BookForm onAdd={handleAddBook} />
-      <BookList books={books} onDelete={handleDeleteBook} />
+      <h1>Books</h1>
+      <div>
+        <input
+          type="text"
+          placeholder="Book title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Book author"
+          value={author}
+          onChange={(e) => setAuthor(e.target.value)}
+        />
+        <button type="button" onClick={handleAddBook}>Add Book</button>
+      </div>
+      <BookList />
     </div>
   );
 };
