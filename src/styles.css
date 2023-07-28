@@ -51,7 +51,7 @@ body {
 .navbar-content {
   width: 100%;
   display: flex;
-  align-items: center; 
+  align-items: center;
 }
 
 .navbar-icon {
@@ -61,10 +61,10 @@ body {
   margin-left: 54%;
 }
 
-.navbar-icon .MuiSvgIcon-root {  
-  border: 0.5px solid rgba(2, 144, 255, 0.3); 
-  border-radius: 100%;  
-  padding: 8px;  
+.navbar-icon .MuiSvgIcon-root {
+  border: 0.5px solid rgba(2, 144, 255, 0.3);
+  border-radius: 100%;
+  padding: 8px;
 }
 
 .title-nav {
@@ -106,18 +106,18 @@ form {
 }
 
 .form-title {
-  font-size: 1.3rem; 
-  font-weight: bold; 
+  font-size: 1.3rem;
+  font-weight: bold;
   margin-left: 4rem;
-  text-align: left; 
-  color: #888; 
+  text-align: left;
+  color: #888;
   width: 100%;
   padding-left: 1rem;
   margin-top: 3rem;
 }
 
 .form-input-title {
-  flex: 1; 
+  flex: 1;
   height: 1.513rem;
   width: 40%;
   padding: 0.813rem 1.063rem;
@@ -129,7 +129,7 @@ form {
 }
 
 .form-input-author {
-  flex: 1; 
+  flex: 1;
   height: 1.513rem;
   width: 30%;
   padding: 0.813rem 1.063rem;
@@ -140,7 +140,7 @@ form {
 }
 
 .form-submit-button {
-  flex: 1; 
+  flex: 1;
   height: 3.113rem;
   width: 17%;
   padding: 0.801rem 4.375rem;
