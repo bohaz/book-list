@@ -9,17 +9,15 @@ const BookList = () => {
   const books = useSelector((state) => state.books);
   const dispatch = useDispatch();
   const appId = getAppId();
-  const [bookList, setBookList] = useState(books); // Estado local para la lista de libros
+  const [bookList, setBookList] = useState(books);
 
   useEffect(() => {
-    // Actualizar el estado local bookList cada vez que cambie el valor de books en Redux
     setBookList(books);
   }, [books]);
 
   const handleDeleteBook = async (itemId) => {
     try {
       await dispatch(removeBookAsync({ APP_ID: appId, itemId }));
-      // Actualizar el estado local bookList después de eliminar el libro
       setBookList(bookList.filter((book) => book.item_id !== itemId));
     } catch (error) {
       console.error('Error deleting book:', error.message);
