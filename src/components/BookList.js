@@ -1,33 +1,37 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux'; // Importamos useSelector y useDispatch
-import { removeBook } from '../redux/books/booksSlice'; // Importamos la acción
+// BookList.js
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import Book from './Book';
+import { removeBookAsync } from '../redux/books/booksSlice';
+import { getAppId } from '../api';
 
 const BookList = () => {
-  const books = useSelector((state) => state.books); // Obtenemos los libros del estado
-  const dispatch = useDispatch(); // Creamos una función dispatch para llamar a las acciones
+  const books = useSelector((state) => state.books);
+  const dispatch = useDispatch();
+  const appId = getAppId();
+  const [bookList, setBookList] = useState(books);
 
-  const handleDeleteBook = (id) => {
-    dispatch(removeBook(id)); // Utilizamos la acción removeBook con el dispatch
+  useEffect(() => {
+    setBookList(books);
+  }, [books]);
+
+  const handleDeleteBook = async (itemId) => {
+    try {
+      await dispatch(removeBookAsync({ APP_ID: appId, itemId }));
+      setBookList(bookList.filter((book) => book.item_id !== itemId));
+    } catch (error) {
+      console.error('Error deleting book:', error.message);
+    }
   };
 
   return (
     <div>
-      <h2>Book List</h2>
-      {books.map((book) => (
-        <div key={book.item_id}>
-          <h3>{book.title}</h3>
-          <p>
-            Author:
-            {' '}
-            {book.author}
-          </p>
-          <p>
-            Category:
-            {' '}
-            {book.category}
-          </p>
-          <button type="button" onClick={() => handleDeleteBook(book.item_id)}>Remove</button>
-        </div>
+      {bookList.map((book) => (
+        <Book
+          key={book.item_id}
+          book={book}
+          onDelete={() => handleDeleteBook(book.item_id)}
+        />
       ))}
     </div>
   );
