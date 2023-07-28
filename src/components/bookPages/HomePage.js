@@ -39,15 +39,17 @@ const HomePage = () => {
   };
 
   return (
-    <div>
-      <h1>ADD NEW BOOK</h1>
-      {}
-      <BookForm onAdd={handleAddBook} />
+    <div className="disp-book">
       <div>
         {books.map((book) => (
           <Book key={book.item_id} book={book} onDelete={() => handleDeleteBook(book.item_id)} />
         ))}
       </div>
+      <h1 className="form-title">ADD NEW BOOK</h1>
+      {}
+
+      <BookForm onAdd={handleAddBook} />
+
     </div>
   );
 };

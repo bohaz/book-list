@@ -1,4 +1,3 @@
-// BookList.js
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Book from './Book';
@@ -25,7 +24,7 @@ const BookList = () => {
   };
 
   return (
-    <div>
+    <div className="books-list-container">
       {bookList.map((book) => (
         <Book
           key={book.item_id}
