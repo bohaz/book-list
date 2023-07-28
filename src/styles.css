@@ -1,0 +1,347 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.books {
+  width: 3.688rem;
+  height: 1rem;
+  font-size: 0.813rem;
+  text-decoration: none;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.9px;
+  color: #121212;
+  transition: color 0.3s ease;
+}
+
+.books:hover {
+  color: #0290ff;
+}
+
+.categories {
+  width: 6.563rem;
+  height: 1rem;
+  opacity: 0.5;
+  text-decoration: none;
+  font-size: 0.813rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 1.9px;
+  color: #121212;
+}
+
+.navbar-container {
+  display: flex;
+  align-items: flex-start;
+  height: 5.938rem;
+  padding: 1.438rem 0 1.688rem 6.25rem;
+  background-color: var(--white-two);
+  box-sizing: border-box;
+}
+
+.navbar-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-icon {
+  display: flex;
+  align-items: flex-end;
+  color: #0290ff;
+  margin-left: 54%;
+}
+
+.navbar-icon .MuiSvgIcon-root {
+  border: 0.5px solid rgba(2, 144, 255, 0.3);
+  border-radius: 100%;
+  padding: 8px;
+}
+
+.title-nav {
+  width: 15rem;
+  height: 2.313rem;
+  margin: 0.375rem 2.938rem 0.125rem 0;
+  font-size: 1.875rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #0290ff;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  gap: 40px;
+  letter-spacing: 1.9px;
+}
+
+.disp-book {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+form {
+  width: 100%;
+}
+
+.form-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 94%;
+}
+
+.form-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-left: 4rem;
+  text-align: left;
+  color: #888;
+  width: 100%;
+  padding-left: 1rem;
+  margin-top: 3rem;
+}
+
+.form-input-title {
+  flex: 1;
+  height: 1.513rem;
+  width: 40%;
+  padding: 0.813rem 1.063rem;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: #fff;
+  text-align: left;
+  margin-left: -0.5rem;
+}
+
+.form-input-author {
+  flex: 1;
+  height: 1.513rem;
+  width: 30%;
+  padding: 0.813rem 1.063rem;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: #fff;
+  margin-right: 1.5rem;
+}
+
+.form-submit-button {
+  flex: 1;
+  height: 3.113rem;
+  width: 17%;
+  padding: 0.801rem 4.375rem;
+  border-radius: 3px;
+  background-color: #0290ff;
+  border: none;
+  color: white;
+  font-size: 0.75rem;
+}
+
+.book-card {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  height: 10.625rem;
+  margin: 2.313rem auto 0;
+  padding: 2rem 9.188rem 1.625rem 1.688rem;
+  border-radius: 4px;
+  border: solid 1px var(--white-three);
+  background-color: var(--white-two);
+  box-sizing: border-box;
+}
+
+.book-category-label {
+  font-size: small;
+  font-family: 'Montserrat-Bold', sans-serif;
+  margin-top: -0.01rem;
+  color: #121212;
+  opacity: 50%;
+  margin-bottom: 0.5rem;
+}
+
+.book-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.book-left-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.book-actions {
+  display: flex;
+  align-self: flex-start;
+  justify-content: space-between;
+  margin-top: -8px;
+  margin-left: -10px;
+  margin-right: 90px;
+}
+
+.book-progress {
+  display: flex;
+  align-items: center;
+  height: 10rem;
+  width: 50rem;
+  flex-direction: column;
+  margin: -6.9rem 0 15rem 0;
+}
+
+.book-title-label {
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto+Slab:wght@700&display=swap');
+
+  width: 12.313rem;
+  height: 1.813rem;
+  margin: -0.188rem 20.188rem 0 0;
+  margin-bottom: 1.9rem;
+  font-family: 'Roboto Slab 700', serif !important;
+  font-size: 1.375rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.2px;
+  color: #121212;
+}
+
+.book-author-label {
+  width: 6.688rem;
+  height: 1.813rem;
+  margin: -1.388rem 20.188rem 0 0;
+  margin-bottom: 1rem;
+  font-family: 'RobotoSlab-light', sans-serif;
+  font-size: 0.975rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.2px;
+  color: #4386bf;
+  opacity: 70%;
+}
+
+.delete-button {
+  width: 3.375rem;
+  height: 1.188rem;
+  margin: 0.188rem 0.938rem 0.125rem 0;
+  font-family: 'Roboto Slab', serif !important;
+  font-size: 0.875rem;
+  font-weight: 300;
+  border: none;
+  background-color: transparent;
+  transition: color 0.3s;
+}
+
+.delete-button,
+.comments-button,
+.edit-button {
+  margin-bottom: 500px;
+  font-family: 'Roboto Slab', serif !important;
+  border: none;
+  background-color: transparent;
+  color: #4386bf;
+  opacity: 70%;
+  margin-top: 0.5rem;
+}
+
+.delete-button:hover {
+  color: #000;
+}
+
+.navbar-container,
+.book-card {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+span {
+  width: 0.125rem;
+  height: 1.5rem;
+  margin: 0.75rem 1.063rem 0 0.938rem;
+  border: solid 1px var(--white-three);
+  color: #888;
+  opacity: 23%;
+}
+
+.current-chapter {
+  opacity: 0.5;
+  font-family: 'Roboto Slab', serif !important;
+  letter-spacing: normal;
+}
+
+.current-chapter-number {
+  opacity: 100%;
+  font-family: 'Roboto Slab 700', serif !important;
+  position: relative;
+  bottom: -9%;
+  color: #121212;
+}
+
+.current-chapter,
+.current-chapter-number {
+  text-align: left;
+  color: #888;
+  margin: 0;
+  flex: 2;
+}
+
+.progress-button {
+  flex: 3;
+  background-color: #0290ff;
+  border: none;
+  color: white;
+  height: 2.063rem;
+  width: 50%;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  text-align: center;
+  margin: 2.3rem 19.2rem 2.6rem 0.1rem;
+}
+
+.progress-bar-container {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: left;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  margin: 3rem 35.8rem 3.37rem  7.9rem;
+}
+
+.progress-bar {
+  width: 60px;
+  height: 60px;
+}
+
+.current-porcentage-number {
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  margin: 0.1rem -20.2rem -2rem 2.9rem;
+}
+
+.current-chapter-container {
+  text-align: center;
+  margin: -8.5rem 12rem -1.4rem 50rem;
+  width: 45%;
+}
+
+.current-completed {
+  font-size: 10px;
+  margin: 0.1rem -10.2rem -3.4rem 14.7rem;
+  opacity: 50%;
+}

@@ -3,7 +3,7 @@
 
 <div align="center">
 
-  <h3><b>Book List</b></h3>
+  <h3><b>Book-list</b></h3>
 
 </div>
 
@@ -30,10 +30,10 @@
 - [📝 License](#license)
 
 
-# 📖 [Book List] <a name="about-project"></a>
+# 📖 [Book-list] <a name="about-project"></a>
 
 
-**[Book List]** It is a Single Page Application that allows users to add and remove books.
+**[Book-list]** It is a Single Page Application that allows users to add and remove amazing books.
 
 ## 🛠 Built With <a name="built-with"></a>
 
