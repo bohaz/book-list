@@ -4,15 +4,14 @@ import { useDispatch } from 'react-redux';
 import { addBookAsync, removeBookAsync } from '../../redux/books/booksSlice';
 import { getAppId } from '../../api';
 import Book from '../Book';
+import BookForm from '../BookForm';
 
 const HomePage = () => {
-  const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
   const [books, setBooks] = useState([]);
   const dispatch = useDispatch();
   const appId = getAppId();
 
-  const handleAddBook = async () => {
+  const handleAddBook = async ({ title, author }) => {
     if (title.trim() && author.trim()) {
       const newBook = {
         item_id: uuidv4(),
@@ -24,8 +23,6 @@ const HomePage = () => {
       try {
         await dispatch(addBookAsync({ APP_ID: appId, book: newBook }));
         setBooks([...books, newBook]);
-        setTitle('');
-        setAuthor('');
       } catch (error) {
         console.error('Error adding book:', error.message);
       }
@@ -43,22 +40,9 @@ const HomePage = () => {
 
   return (
     <div>
-      <h1>Books</h1>
-      <div>
-        <input
-          type="text"
-          placeholder="Book title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Book author"
-          value={author}
-          onChange={(e) => setAuthor(e.target.value)}
-        />
-        <button type="button" onClick={handleAddBook}>Add Book</button>
-      </div>
+      <h1>ADD NEW BOOK</h1>
+      {}
+      <BookForm onAdd={handleAddBook} />
       <div>
         {books.map((book) => (
           <Book key={book.item_id} book={book} onDelete={() => handleDeleteBook(book.item_id)} />

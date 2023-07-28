@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const BASE_URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi';
-const APP_ID = 'lDUhj00krnQ9SRH2Nqzx'; // Reemplaza 'abc123' con el identificador de tu aplicación
+const APP_ID = 'lDUhj00krnQ9SRH2Nqzx';
 
 export const getAppId = () => APP_ID;
 
