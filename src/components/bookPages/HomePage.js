@@ -1,25 +1,43 @@
+import { v4 as uuidv4 } from 'uuid';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import BookList from '../BookList';
-import { addBook } from '../../redux/books/booksSlice';
+import { addBookAsync, removeBookAsync } from '../../redux/books/booksSlice';
+import { getAppId } from '../../api';
+import Book from '../Book';
 
 const HomePage = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
+  const [books, setBooks] = useState([]);
   const dispatch = useDispatch();
+  const appId = getAppId();
 
-  const handleAddBook = () => {
+  const handleAddBook = async () => {
     if (title.trim() && author.trim()) {
-      dispatch(
-        addBook({
-          item_id: `item${Date.now()}`,
-          title,
-          author,
-          category: 'Uncategorized',
-        }),
-      );
-      setTitle('');
-      setAuthor('');
+      const newBook = {
+        item_id: uuidv4(),
+        title,
+        author,
+        category: 'Uncategorized',
+      };
+
+      try {
+        await dispatch(addBookAsync({ APP_ID: appId, book: newBook }));
+        setBooks([...books, newBook]);
+        setTitle('');
+        setAuthor('');
+      } catch (error) {
+        console.error('Error adding book:', error.message);
+      }
+    }
+  };
+
+  const handleDeleteBook = async (itemId) => {
+    try {
+      await dispatch(removeBookAsync({ APP_ID: appId, itemId }));
+      setBooks(books.filter((book) => book.item_id !== itemId));
+    } catch (error) {
+      console.error('Error deleting book:', error.message);
     }
   };
 
@@ -41,7 +59,11 @@ const HomePage = () => {
         />
         <button type="button" onClick={handleAddBook}>Add Book</button>
       </div>
-      <BookList />
+      <div>
+        {books.map((book) => (
+          <Book key={book.item_id} book={book} onDelete={() => handleDeleteBook(book.item_id)} />
+        ))}
+      </div>
     </div>
   );
 };
