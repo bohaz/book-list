@@ -3,7 +3,7 @@
 
 <div align="center">
 
-  <h3><b>Book-list</b></h3>
+  <h3><b>📚 Book-list</b></h3>
 
 </div>
 
@@ -30,10 +30,10 @@
 - [📝 License](#license)
 
 
-# 📖 [Book-list] <a name="about-project"></a>
+# 📖 Book-list <a name="about-project"></a>
 
 
-**[Book-list]** It is a Single Page Application that allows users to add and remove amazing books.
+**Book-list** It is a Single Page Application that allows users to add and remove amazing books.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -61,7 +61,7 @@ React, Git, and GitHub
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
- Demo link is coming soon!!   
+ - [Live Demo Link](https://bohaz-book-list.onrender.com)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -133,8 +133,8 @@ You can deploy this project using:
 👤 **Ricardo Martínez**
 
 - GitHub: [@bohaz](https://github.com/bohaz)
-- Twitter: [@Ricardo29115571](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- Twitter: [@Ricardo29115571](https://twitter.com/Ricardo29115571)
+- LinkedIn: [Ricardo Martinez](https://www.linkedin.com/in/ricardomart%C3%ADnez%E2%88%B4/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -143,8 +143,8 @@ You can deploy this project using:
 ## 🔭 Future Features <a name="future-features"></a>
 
 
-- [ ] **[Functionality]**
-- [ ] **[Content]**
+- [ ] **Functionality**
+- [ ] **Content**
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
